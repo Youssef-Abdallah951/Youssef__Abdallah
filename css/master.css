@@ -1,0 +1,279 @@
+*{
+    font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
+}
+.name{
+    text-decoration:none;
+    color: #093FB4;
+    text-transform:uppercase;
+    font-weight: 600;
+    letter-spacing: 5px;
+    position: relative;
+    bottom: -8px;
+    cursor: auto;
+}
+.name:hover{
+  color: purple;
+}
+.n {
+    background-color: whitesmoke;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between; /* يوزع الاسم شمال والقائمة يمين */
+    align-items: center;
+}
+.nav{
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 768px) {
+  .n {
+    flex-direction: column;  /* يخلي الاسم فوق والقائمة تحت */
+    align-items: center;
+  }
+
+  .nav {
+    flex-direction: column;  /* اللينكات تبقى تحت بعض */
+    gap: 15px;
+    margin-top: 10px;
+  }
+}
+.nav a{
+    color: #093FB4;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+}
+.nav a:hover{
+  color: purple;
+}
+.main{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTXRol9REEtTNZpwj0PQsEC3hp4fc9pnxgTKs9R7KfvyPAXP1xV7yhTww&s");    
+    background-size: cover;
+    justify-content: center;
+}
+.main h2{
+    font-weight: 600;
+    font-size: 4vw;
+    line-height: 1.7;
+}
+span{
+    color: #446ddd;
+}
+.cv{
+    color: white;
+    background-color: #093FB4;
+    padding: 0.9357em 2.1857em;
+    border-radius: 15%;
+    margin-bottom: 45px;
+    display: inline-block;
+    margin-left: 5px;
+    text-decoration: none;
+    font-weight: 700;
+}
+.cv:hover{
+  transform: scale(1.1); 
+  transition: transform .8s ease;
+}
+.media{
+    letter-spacing: 5px;
+    font-size: 2em;
+}
+.linkedin:hover{
+    color: rgba(0, 197, 247, 0.884);
+}
+.facebook:hover{
+    color: blue;
+    background-color: white;
+}
+.instagram:hover{
+    color: white;
+    background: radial-gradient(circle at 60% 107%, 
+        #fdf497 0%, #fdf497 5%, 
+        #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+.gmail:hover {
+  color: white;
+}
+.title{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2em;
+}
+.about{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.card{
+    padding: 15px;
+    margin: 20px;
+    box-shadow: 0 5px 15px #000000;
+    width: 315px;
+    height: 400px;
+    border-radius: 13%;
+}
+.icon{
+    color: blue;
+    opacity: 0.7;
+    font-size: 5em;
+    text-align: center;
+}
+.info h3{
+    color: blue;
+}
+.info p{
+    font-weight: 300;
+    font-size: larger;
+}
+:root{
+  --bg: #4a90ff;          /* page background */
+  --card-bg: #ffffff;
+  --text: #0b1635;
+  --muted: #4f5b7a;
+  --link: #0b66ff;
+  --ring: rgba(0,0,0,.08);
+  --shadow: 0 10px 25px rgba(0,0,0,.12);
+  --radius: 16px;
+}
+
+/* ---------- Reset ---------- */
+*{ box-sizing: border-box; }
+html,body{ margin:0; padding:0; }
+img{ max-width:100%; display:block; }
+
+/* ---------- Layout ---------- */
+body{
+  background: radial-gradient(1200px 700px at 20% -10%, #bfcbdd 0%, var(--bg) 40%, #2e6ff2 100%);
+  color: var(--text);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1;
+}
+
+.page-header, .page-footer{
+  text-align:center;
+  padding: 28px 18px;
+}
+
+.container{
+  width:min(1200px, 92%);
+  margin-inline:auto;
+  padding: 22px 0 48px;
+  display:grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 22px;
+}
+
+/* ---------- Card ---------- */
+.card{
+  grid-column: span 12; /* mobile: full width */
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  transition: 0.5s all;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.18);
+}
+
+.thumb{
+  position: relative;
+  background:#f3f5fa;
+  /* keep nice aspect ratio like the screenshot */
+  aspect-ratio: 16/9;
+  overflow:hidden;
+}
+.thumb img{
+  width:100%;
+  height:100%;
+  object-fit: cover; /* change to "contain" if your images need full view with borders */
+  transition: transform .5s ease;
+}
+.card:hover {
+  transform: scale(1.1);   /* 5% تكبير */
+  transition: transform .3s ease;
+}
+.info{
+  padding: 16px 18px 18px;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.title{
+  margin:0;
+  font-size: clamp(16px, 2.2vw, 18px);
+  font-weight: 700;
+  color: var(--text);
+}
+.more{
+  margin-left:auto;
+  font-size: 14px;
+  text-decoration: none;
+  color: #fff;
+  background: var(--link);
+  padding: 10px 14px;
+  border-radius: 999px;
+  box-shadow: 0 6px 14px var(--ring);
+  transition: transform .2s ease, opacity .2s ease;
+  white-space: nowrap;
+}
+.more:hover{ transform: translateY(-1px); opacity: .95; }
+.more:active{ transform: translateY(0); }
+
+/* ---------- Responsive Grid ---------- */
+@media (min-width: 640px){
+  .card{ grid-column: span 6; }   /* 2 per row */
+}
+@media (min-width: 992px){
+  .card{ grid-column: span 4; }   /* 3 per row like the screenshot */
+}
+
+/* ---------- Footer ---------- */
+.page-footer p{
+  margin:0;
+  font-size: 12px;
+  opacity:.9;
+}
+.Contact-US{
+    text-align: center;
+    font-size: 1.73em;
+    font-weight: 200;
+    margin-top: 10px;
+}
+.Contact{
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+}
+.C{
+    padding: 15px;
+    margin: 20px;
+    box-shadow: 0 5px 15px #000000;
+    width: 315px;
+    height: 250px;
+    border-radius: 10%;
+    display: inline-block;
+    transition: 0.5s all;
+}
+.C:hover {
+  transform: scale(1.1);   /* 5% تكبير */
+  transition: transform .3s ease;
+}
